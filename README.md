@@ -35,6 +35,8 @@ O **Taranis Sales AI** é uma transformação comercial que combina inteligênci
 ```text
 Taranis-Sales-AI/
 ├── README.md                                 # Este arquivo (Visão Executiva do Projeto)
+├── app.py                                    # Aplicação Web Interativa (Streamlit)
+├── requirements.txt                          # Dependências para deploy no Streamlit Cloud
 ├── docs/
 │   ├── 00_premissas_e_governanca.md          # Diretrizes, epistemologia [FATO/HIPÓTESE/PROPOSTA] e catálogo oficial
 │   ├── 01_rota0_ai_canvas.md                 # AI Canvas: 3 oportunidades, tipos de IA e Human-in-the-Loop
@@ -48,6 +50,24 @@ Taranis-Sales-AI/
     ├── assistente_objecoes_comerciais.md     # Prompt operacional do Copiloto de Vendas para as 5 objeções
     ├── gerador_emails_consultivos.md         # Prompt gerador de copy consultiva B2B por persona e tom de voz
     └── roleplay_simulacao_clientes.md        # Prompt do Simulador de Clientes (Treinador de Vendas com feedback)
+```
+
+---
+
+## 💻 4. Como Executar a Aplicação Web Interativa (Streamlit)
+
+O projeto conta com um aplicativo web interativo completo para simulação de vendas, cálculo de TCO e contorno de objeções:
+
+### Deploy Gratuito no Streamlit Cloud (1 Clique):
+1. Acesse [share.streamlit.io](https://share.streamlit.io/) e faça login com seu GitHub.
+2. Clique em **"New app"**.
+3. Selecione o repositório `lostanjo00/Taranis-Sales-AI`, branch `main` e arquivo `app.py`.
+4. Clique em **"Deploy"**!
+
+### Execução Local:
+```bash
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
 ---
