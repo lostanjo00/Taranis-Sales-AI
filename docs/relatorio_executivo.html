@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taranis Sales AI — Relatório Executivo Oficial (ONE G11 & Alura)</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --accent: #0284c7;
+      --dark: #0f172a;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --success: #059669;
+      --border-radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: var(--gray-50);
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--gray-200);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    h2.subtitle {
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--gray-100);
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    h4 {
+      font-size: 1.05rem;
+      color: var(--gray-800);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid var(--primary-light);
+      padding: 1.25rem;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      margin: 1.5rem 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border: 1px solid var(--gray-200);
+      vertical-align: top;
+    }
+
+    th {
+      background-color: var(--gray-100);
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    pre, code {
+      font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      background: var(--dark);
+      color: #f8fafc;
+      padding: 1.25rem;
+      border-radius: var(--border-radius);
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    blockquote {
+      background: var(--gray-50);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      color: #1e293b;
+      font-style: italic;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    blockquote strong {
+      font-style: normal;
+      color: var(--dark);
+    }
+
+    ul, ol {
+      margin-left: 1.75rem;
+      margin-bottom: 1.25rem;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .btn-copy {
+      float: right;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .badge-check {
+      background: #d1fae5;
+      color: var(--success);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+      .btn-copy {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <span class="header-badge">PROGRAMA ORACLE NEXT EDUCATION (ONE) & ALURA</span>
+    <h1>CHALLENGE ONE G11 — AI FOR BUSINESS</h1>
+    <h2 class="subtitle">Relatório Executivo Consolidado — Taranis Black | ROTA 1 — VENDAS E COMERCIAL</h2>
+
+    <div class="callout">
+      <div class="callout-title">💡 Como utilizar este documento</div>
+      <p style="margin-bottom: 0;">Este documento contém todos os textos oficiais e evidências práticas prontos para cópia e colagem no seu modelo do Google Docs da Alura. O conteúdo cumpre 100% da Rota 0 (Obrigatória), Rota 1 (Especialização) e Anexo de Evidências.</p>
+    </div>
+
+    <!-- IDENTIFICAÇÃO -->
+    <h2>📋 IDENTIFICAÇÃO DO ALUNO</h2>
+    <table>
+      <tr>
+        <th style="width: 30%;">Campo</th>
+        <th>Preenchimento</th>
+      </tr>
+      <tr>
+        <td><strong>Nome Completo</strong></td>
+        <td>[Seu Nome Completo]</td>
+      </tr>
+      <tr>
+        <td><strong>E-mail</strong></td>
+        <td>[Seu E-mail Cadastrado na Alura]</td>
+      </tr>
+      <tr>
+        <td><strong>Rota Escolhida</strong></td>
+        <td><strong><span class="badge-check">SELECIONADA</span> Rota 1 — IA para Vendas e Comercial</strong></td>
+      </tr>
+    </table>
+
+    <!-- CENÁRIO -->
+    <h2>🏢 SEU CENÁRIO NA TARANIS BLACK — ROTA 1</h2>
+    <table>
+      <tr>
+        <th style="width: 30%;">Dimensão</th>
+        <th>Especificação Oficial</th>
+      </tr>
+      <tr>
+        <td><strong>Público Indicado</strong></td>
+        <td>Vendedores B2B, SDRs, gerentes de contas e analistas comerciais.</td>
+      </tr>
+      <tr>
+        <td><strong>Problema a Resolver</strong></td>
+        <td>A equipe comercial B2B perde mais de 40% do tempo semanal preenchendo CRM, escrevendo e-mails genéricos e qualificando leads sem dados suficientes. As objeções de preço e prazo travam o fechamento de propostas.</td>
+      </tr>
+    </table>
+
+    <h3>Resumo Executivo (E-mail para a CEO da Taranis Black em até 15 linhas)</h3>
+    <pre><code>De: Equipe de Consultoria e Arquitetura de Soluções Taranis Sales AI
+Para: Diretora Executiva (CEO) — Taranis Black
+Assunto: Proposta Estratégica Taranis Sales AI: Recuperação de Produtividade e Conversão Comercial B2B
+
+Prezada CEO,
+
+Identificamos que o crescimento recente de 35% a.a. da Taranis Black encontra-se restringido por gargalos operacionais: nossos 
+consultores comerciais perdem ~40% do tempo semanal (16h/vendedor) com digitação em CRM e e-mails genéricos, enquanto R$ 4,69 milhões 
+em propostas encontram-se parados nas 20 contas corporativas do CRM devido a objeções de preço e prazo de entrega.
+
+Para destravar essa alavanca de crescimento, estruturamos o Taranis Sales AI em três iniciativas coordenadas:
+1. Personalização Consultiva de E-mails & Qualificação de Leads (Quick Win com geração ágil sob o tom de voz da marca);
+2. Copiloto de Vendas & Treinador de Objeções (IA com grounding factual em nosso catálogo para superar travas de preço e prazo);
+3. Automação Inteligente de Registros de CRM (extração estruturada JSON e integridade do pipeline sem esforço braçal).
+
+O impacto projetado inclui a liberação de 14 horas semanais por vendedor para prospecção ativa (+35% de capacidade útil real) e a 
+meta de converter entre 25% e 35% do pipeline represado, gerando de R$ 1,17M a R$ 1,64M em receita incremental com supervisão 
+humana obrigatória e total conformidade com a LGPD e NR-17.
+
+Permanecemos à disposição para aprovação do cronograma de implantação.</code></pre>
+
+    <!-- PARTE 1: ROTA 0 -->
+    <h2>🧭 PARTE 1 — BASE ESTRATÉGICA OBRIGATÓRIA (ROTA 0)</h2>
+
+    <h3>Etapa 1 — AI Canvas & Mapeamento de Oportunidades <span class="badge-check">OBRIGATÓRIA</span></h3>
+    
+    <h4>1. Casos de Uso Identificados (Mínimo 3)</h4>
+    <ol>
+      <li><strong>Automação de Registros no CRM:</strong> Extração estruturada de anotações não estruturadas de reuniões comerciais, convertendo atas, áudios e anotações em dados relacionais (etapa do negócio, decisores, produtos ErgoPro/SmartDesk cotados e próximos passos) com validação de schema antes da gravação no CRM.</li>
+      <li><strong>Personalização de E-mails e Qualificação de Leads B2B:</strong> Geração assistida de mensagens consultivas contextualizadas por persona decisora (RH / People, Facilities / Arquitetura e Compras / CFO), aplicando os 4 pilares do Tom de Voz da Taranis Black (Científico, Empático, Sofisticado, Descomplicado) e algoritmo de Lead Scoring multidimensional para triagem de contas.</li>
+      <li><strong>Copiloto de Vendas Consultivas e Tratamento de Objeções:</strong> Assistente inteligente com arquitetura RAG (grounding estrito no Catálogo Oficial de Produtos, laudos NR-17/ABERGO e prazos do CD de Santa Catarina) para orientar consultores a superar objeções de preço/prazo através de Custo Total de Propriedade (TCO), além de ambiente de simulação (roleplay) para capacitação de novos vendedores.</li>
+    </ol>
+
+    <h4>2. Classificação por Tipo de IA e Justificativa</h4>
+    <ul>
+      <li><strong>Iniciativa 1 (CRM): IA Generativa + IA Tradicional (Híbrida).</strong> Justificativa: A IA Generativa (LLM) interpreta anotações desestruturadas e extrai entidades em formato JSON; a IA Tradicional valida schemas, integridade de campos e executa chamadas de APIs REST seguras no CRM.</li>
+      <li><strong>Iniciativa 2 (E-mails e Leads): IA Generativa + IA Preditiva/Tradicional (Híbrida).</strong> Justificativa: A IA Generativa redige e-mails persuasivos adaptados ao tom de voz; a IA Preditiva/Tradicional calcula a pontuação de prioridade do lead (Lead Scoring) com base em variáveis firmográficas (porte, urgência e orçamento).</li>
+      <li><strong>Iniciativa 3 (Copiloto de Vendas): IA Generativa com Arquitetura RAG.</strong> Justificativa: Combina a fluência conversacional de LLMs com busca vetorial restrita aos documentos institucionais da empresa, impedindo alucinações sobre preços, prazos ou certificações, além de simular dinamicamente perfis de compradores em roleplay.</li>
+    </ul>
+
+    <h4>3. Supervisão Humana (Human-in-the-Loop)</h4>
+    <ul>
+      <li><strong>Automação de CRM:</strong> A gravação direta é bloqueada. O sistema gera um rascunho de tela (staging card); o vendedor revisa, ajusta e clica manualmente no botão de confirmação para salvar.</li>
+      <li><strong>Personalização de E-mails:</strong> Trava técnica obrigatória contra disparos autônomos. Toda mensagem é gerada como rascunho, exigindo leitura crítica, personalização final e envio manual pelo consultor.</li>
+      <li><strong>Copiloto de Vendas:</strong> Atua exclusivamente em ambiente interno de treinamento e preparação prévia. A condução da conversa, concessão de condições comerciais e decisão final pertencem 100% ao consultor humano.</li>
+    </ul>
+
+    <h3>Etapa 2 — Priorização Baseada em Dados & Gestão de Mudança <span class="badge-check">OBRIGATÓRIA</span></h3>
+
+    <h4>1. Matriz Esforço × Impacto e Ordem de Implantação</h4>
+    <pre><code>                  Impacto (I)
+                     ▲
+            5.0      │
+                     │  QUADRANTE 1:             QUADRANTE 2:
+                     │  Ganhos Rápidos           Projetos Estratégicos
+                     │  (Quick Wins)             (Alto Impacto, Alto Esforço)
+                     │  • Oportunidade 2 (2.65, 3.50)
+                     │  • Oportunidade 1 (3.00, 3.60)* • Oportunidade 3 (3.05, 3.50)
+            3.0 ─────┼───────────────────────────
+                     │  QUADRANTE 3:             QUADRANTE 4:
+                     │  Melhorias Pontuais       Despriorizar / Evitar
+                     │  (Baixo Impacto, Baixo E.)│ (Baixo Impacto, Alto Esforço)
+            1.0      │
+                     └───────────────────────────► Esforço (E)
+                    1.0             3.0        5.0</code></pre>
+    <p><strong>Ordem de Implantação Estratégica:</strong></p>
+    <ol>
+      <li><strong>Fase 1 (Mês 1 a 2 — Quick Win Puro):</strong> Personalização de E-mails & Leads (E = 2,65 | I = 3,50) — Baixo atrito de infraestrutura e impacto imediato na prospecção.</li>
+      <li><strong>Fase 2 (Mês 2 a 4 — Capacitação Estratégica):</strong> Copiloto de Vendas Consultivas (E = 3,05 | I = 3,50) — Piloto educacional focado em destravar as 20 contas abertas no pipeline via contorno de objeções de valor.</li>
+      <li><strong>Fase 3 (Mês 4 a 6 — Sustentação de Dados):</strong> Automação de Registros no CRM (E = 3,00 | I = 3,60) — Homologação de conectores de API e padronização sistêmica do pipeline.</li>
+    </ol>
+
+    <h4>2. Métricas de Sucesso, Horas Economizadas e ROI Estimado</h4>
+    <ul>
+      <li><strong>Horas Economizadas:</strong> Redução combinada de <strong>14 horas semanais por vendedor</strong> (5h em redação de e-mails + 3h em pesquisa de objeções + 6h em digitação de CRM), mitigando em 87,5% a perda de tempo burocrático e devolvendo +35% de capacidade útil comercial.</li>
+      <li><strong>ROI Estimado:</strong> Base do Pipeline de R$ 4.693.630,00 nas 20 contas do CRM. Com meta de conversão de 25% a 35%, projeta-se receita incremental de <strong>R$ 1.173.407,50 a R$ 1.642.770,50</strong>. Com investimento de R$ 120.000,00, o ROI projetado atinge <strong>877,8% a 1.268,9%</strong> (9,7x a 13,6x o capital investido).</li>
+      <li><strong>Metas de Adoção:</strong> 85% dos e-mails comerciais gerados com auxílio da IA em 120 dias; 5 simulações semanais de roleplay por consultor; 95% de completude do CRM em 24h.</li>
+    </ul>
+
+    <h4>3. Plano de Gestão de Mudança Cultural</h4>
+    <ul>
+      <li><strong>Mitigação da Síndrome do "Sempre vendi assim":</strong> Envolvimento de vendedores seniores na calibração dos prompts; posicionamento transparente da liderança reafirmando que a IA apoia o consultor em tarefas chatas, mas não substitui a sensibilidade humana do relacionamento B2B.</li>
+      <li><strong>Ambiente Seguro de Aprendizado (Roleplay):</strong> Simulações tratadas como treino individual com segurança psicológica (sem penalidades em avaliações de desempenho).</li>
+      <li><strong>Squad de Embaixadores Comerciais:</strong> Seleção de 3 consultores referência para cocriar as primeiras mensagens e compartilhar vitórias rápidas com o time.</li>
+    </ul>
+
+    <h3>Etapa 3 — Política de Governança, Ética e Conformidade <span class="badge-check">OBRIGATÓRIA</span></h3>
+
+    <h4>1. Política de IA Responsável (Matriz Pode vs. Não Pode)</h4>
+    <table>
+      <tr>
+        <th style="width: 50%;">O QUE PODE (Práticas Autorizadas) ✅</th>
+        <th>O QUE NÃO PODE (Condutas Proibidas) ❌</th>
+      </tr>
+      <tr>
+        <td>
+          • Utilizar ferramentas com licença corporativa DPA.<br>
+          • Gerar rascunhos de e-mails, notas e planos de negociação.<br>
+          • Citar laudos oficiais da NR-17/ABERGO e ANSI/BIFMA.<br>
+          • Utilizar preços e prazos oficiais do Catálogo da Taranis.<br>
+          • Aplicar supervisão humana obrigatória prévia.
+        </td>
+        <td>
+          • Utilizar modelos públicos que retêm dados para retreinamento.<br>
+          • Inserir dados pessoais sensíveis (CPF, RG, endereços privados).<br>
+          • <strong>Inserir atestados médicos nominais, laudos clínicos ou CID.</strong><br>
+          • Prometer cura de patologias posturais ou imunidade a processos.<br>
+          • Disparos autônomos sem conferência humana.
+        </td>
+      </tr>
+    </table>
+
+    <h4>2. Riscos de Viés e Conformidade com a LGPD</h4>
+    <ul>
+      <li><strong>Mitigação de Viés de Porte no Lead Scoring:</strong> Prevenção do descarte automático de pequenas empresas de alto ticket. Exemplo real da base: <strong>Studio Alfa Arquitetura (#1044)</strong>, que tem apenas 45 funcionários, mas proposta de <strong>R$ 635.500,00</strong> (2ª maior do pipeline). Regra algorítmica: trava de segurança impedindo descarte de contas com proposta > R$ 100 mil.</li>
+      <li><strong>Proteção de Dados Sensíveis (Art. 11 LGPD):</strong> Bloqueio absoluto do tratamento de dados de saúde nominais; utilização exclusiva de dados ergonômicos normativos e estatísticas agregadas de absenteísmo.</li>
+      <li><strong>Base Legal e Opt-Out (Art. 7º e Art. 18 LGPD):</strong> Enquadramento em Legítimo Interesse (Art. 7º, IX) com teste de proporcionalidade (LIA) e procedimentos contratuais (Art. 7º, V); rodapé padronizado em todas as mensagens com canal de descadastramento imediato (opt-out).</li>
+      <li><strong>Proteção Contratual:</strong> Uso estrito de acordos DPA corporativos (Zero Data Retention) e criptografia em trânsito (TLS 1.3) e em repouso (AES-256).</li>
+    </ul>
+
+    <h4>3. Comitê de Ética e Cadência de Auditoria</h4>
+    <ul>
+      <li><strong>Composição Multidisciplinar (5 Membros):</strong> Encarregado de Dados (DPO/Jurídico - Presidente), Coordenador Comercial (Sales Ops), Especialista em Segurança da Informação & TI, Ergonomista Chefe (Credenciado ABERGO/NR-17) e Gestor de RH/People Analytics.</li>
+      <li><strong>Cadência dos Rituais:</strong> Semanal (amostragem de 10% para checagem de Human-in-the-Loop), Mensal (auditoria técnica de prompts e alucinações) e Trimestral (auditoria executiva de LGPD e segurança).</li>
+    </ul>
+
+    <!-- PARTE 2: ROTA 1 -->
+    <h2>💼 PARTE 2 — ESPECIALIZAÇÃO: IA PARA VENDAS E COMERCIAL</h2>
+
+    <h3>Etapa 1 — Playbook Comercial & Contorno de Objeções <span class="badge-check">OBRIGATÓRIA</span></h3>
+
+    <h4>1. Estrutura do Playbook de Vendas Consultivas</h4>
+    <p>Metodologia de Vendas Consultivas B2B pautada pelos 4 Pilares de Tom de Voz da Taranis Black (Científico, Empático, Sofisticado e Descomplicado), mapeando a jornada em 4 etapas: Diagnóstico Ergonômico Inicial, Dimensionamento Técnico com Blocos 3D/BIM, Desarme Consultivo de Objeções e Fechamento com Emissão de Laudos NR-17.</p>
+
+    <h4>2. As 5 Objeções Mapeadas e Argumentos Consultivos (Aba 2 da Planilha Oficial)</h4>
+    <table>
+      <tr>
+        <th style="width: 35%;">Objeção Mapeada (Aba 2)</th>
+        <th>Contorno Consultivo & Argumento de Valor Oficial</th>
+      </tr>
+      <tr>
+        <td><strong>OBJ-01 (Preço)</strong><br><em>"A cadeira/mesa do concorrente é 30% mais barata"</em></td>
+        <td>Contorno pelo Custo Total de Propriedade (TCO). O mobiliário comum tem vida útil de apenas 14 meses; a ErgoPro Executive possui garantia contratual de 5 anos com Laudo NR-17 emitido pela ABERGO e ANSI/BIFMA X5.1. Diluído em 5 anos úteis (1.825 dias), o custo é de <strong>menos de R$ 1,90/dia por colaborador</strong>, tornando-se mais econômico do que recompras e manutenções frequentes.</td>
+      </tr>
+      <tr>
+        <td><strong>OBJ-02 (Orçamento)</strong><br><em>"O orçamento deste semestre já está fechado/congelado pelo CFO"</em></td>
+        <td>Contorno posicionando a ergonomia ativa como mitigação de absenteísmo e custos ocultos de LER/DORT, viabilizando a contratação via <strong>faturamento em 30/60/90 dias no boleto bancário</strong>, permitindo enquadrar o investimento como despesa operacional mensal (OPEX sem travar o CAPEX do semestre).</td>
+      </tr>
+      <tr>
+        <td><strong>OBJ-03 (Fornecedor Atual)</strong><br><em>"Já compramos de outro fornecedor homologado há anos"</em></td>
+        <td>Contorno não-conflituoso diferenciando nossa tecnologia de <strong>Ergonomia Ativa</strong> (mesas elétricas SmartDesk Pro e cabines acústicas Silence com 32 dB ISO 23351-1) do mobiliário estático passivo tradicional, ofertando um <strong>Projeto-Piloto sem compromisso de 2 posições por 15 dias</strong> no setor de maior exigência física da empresa.</td>
+      </tr>
+      <tr>
+        <td><strong>OBJ-04 (Prazo de Entrega)</strong><br><em>"O prazo de 20 a 25 dias para nossa cidade é muito longo"</em></td>
+        <td>Contorno logístico através de estoque regulador estratégico no <strong>CD de Santa Catarina</strong>, garantindo entregas de <strong>5 a 8 dias úteis para Sul e Sudeste com Frete CIF 100% gratuito</strong> acima de R$ 35 mil, com plano de Entrega Escalonada imediata para as primeiras posições prioritárias e envio de blocos BIM para adiantar a obra civil de Facilities.</td>
+      </tr>
+      <tr>
+        <td><strong>OBJ-05 (Customização)</strong><br><em>"Não sei se os produtos vão combinar com o layout ou identidade visual"</em></td>
+        <td>Contorno oferecendo <strong>personalização gratuita de cores de tela mesh e tampos de madeira certificada FSC</strong> para pedidos acima de 30 posições (+5 dias úteis), remessa de caixa de amostras físicas de tecidos e acabamentos em até 48 horas e disponibilização de biblioteca completa de famílias 3D/BIM (Revit, SketchUp e AutoCAD).</td>
+      </tr>
+    </table>
+
+    <h4>3. Prompt de Simulação do Cliente (Roleplay de Treinamento) — TEXTO INTEGRAL</h4>
+    <pre><code># SYSTEM PROMPT — SIMULADOR DE NEGOCIAÇÕES B2B (TARANIS BLACK)
+
+Você é o Simulador de Negociações Comerciais B2B da Taranis Black, uma empresa brasileira de ergonomia corporativa de alto desempenho (faturamento R$ 48M, 280 colaboradores, crescimento de 35% a.a.).
+
+Sua função é atuar como um comprador corporativo exigente, realista e cético durante uma simulação de vendas (roleplay) com um consultor comercial da Taranis Black.
+
+## SEU PERFIL DE COMPORTAMENTO
+Você deve assumir uma de 3 personas corporativas conforme solicitado pelo vendedor no início da sessão:
+1. DIRETOR DE PROCUREMENT / COMPRAS: Focado exclusivamente em preço unitário, prazo de pagamento, descontos e Custo Total de Propriedade (TCO). Áspero, direto e resistente a argumentos puramente estéticos.
+2. DIRETORA DE RH / GENTE & GESTÃO: Preocupada com clima, dor nas costas de colaboradores, queixas de postura em regime híbrido e retenção de talentos, mas pressionada por restrição orçamentária da diretoria.
+3. GESTOR DE FACILITIES & ARQUITETURA: Focado em dimensões físicas, passagem de cabeamento, acústica de cabines (norma ISO 23351-1), prazo de entrega da obra, famílias BIM (Revit) e durabilidade de mecanismos.
+
+## REGRAS DE NEGOCIAÇÃO E CONHECIMENTO TÉCNICO
+- Não ceda facilmente. Faça perguntas difíceis baseadas nas 5 objeções oficiais da Taranis Black:
+  * OBJ-01: Preço ("A cadeira/mesa do concorrente é 30% mais barata").
+  * OBJ-02: Orçamento ("O orçamento deste semestre já está fechado/congelado pelo CFO").
+  * OBJ-03: Fornecedor Atual ("Já compramos de outro fornecedor homologado há anos").
+  * OBJ-04: Prazo de Entrega ("O prazo de 20 a 25 dias para nossa cidade é muito longo").
+  * OBJ-05: Customização ("Não sei se vai combinar com o layout ou identidade visual").
+- Você só deve avançar no funil e concordar em fechar a proposta se o vendedor apresentar argumentos técnicos sólidos, utilizando a política oficial da Taranis Black:
+  * Garantia de 5 anos de fábrica (ErgoPro Executive e SmartDesk Pro);
+  * Custo Total de Propriedade (TCO) diluído a menos de R$ 1,90/dia por colaborador vs. 14 meses de vida útil de móveis comuns;
+  * Centro de Distribuição em Santa Catarina com estoque regulador, entregas de 5 a 8 dias úteis (Sul/Sudeste) e entrega em fases;
+  * Laudo Ergonômico de Posto de Trabalho individualizado em PDF assinado por Ergonomista credenciado ABERGO sem custo extra para compras >10 posições;
+  * Faturamento em 30/60/90 dias no boleto bancário (OPEX sem travar CAPEX) e frete CIF gratuito acima de R$ 35 mil;
+  * Projeto-Piloto de 2 posições por 15 dias sem compromisso;
+  * Customização gratuita de cores mesh e tampos FSC para pedidos > 30 posições e blocos 3D/BIM (Revit).
+
+## DINÂMICA DO ROLEPLAY
+1. Inicie a interação saudando o vendedor, declarando seu cargo e empresa, e disparando a primeira objeção de forma enfática.
+2. Responda mensagem por mensagem, mantendo a persona durante todo o diálogo.
+3. Quando o vendedor enviar o comando "FINALIZAR SIMULAÇÃO", saia do personagem e apresente um RELATÓRIO DE FEEDBACK ESTRUTURADO contendo:
+   - Pontos Fortes da Argumentação do Consultor;
+   - Oportunidades de Melhoria e Erros Técnicos cometidos;
+   - Nota Geral de Desempenho Consultivo (de 0 a 10).</code></pre>
+
+    <h4>Diálogo de Teste Homologado Realizado com o Prompt:</h4>
+    <blockquote>
+      <p><strong>Vendedor (Usuário):</strong> "Olá, Roberto! Sou a Mariana da Taranis Black. Sei que vocês estão ampliando o escritório da FinCorp e gostaria de entender como podemos apoiar no projeto das estações de trabalho e cabines acústicas."</p>
+      <p><strong>Simulador de IA (Persona Diretor de Compras — Roberto / FinCorp):</strong> <em>"Boa tarde, Mariana. Direto ao ponto: recebi sua proposta de R$ 418.800,00 para as 120 cadeiras ErgoPro Executive e as mesas SmartDesk. Esse valor está completamente fora da nossa realidade. Temos uma cotação na mesa de um concorrente tradicional onde as cadeiras e mesas saem cerca de 30% mais baratas que a linha de vocês. Por que eu pagaria 30% a mais na Taranis Black?"</em></p>
+      <p><strong>Vendedor (Usuário):</strong> <em>"Entendo perfeitamente sua preocupação financeira, Roberto. A diferença inicial de 30% na nota fiscal de entrada chama a atenção de imediato. No entanto, o cálculo que grandes consultorias como a FinCorp costumam analisar conosco é o Custo Total de Propriedade (TCO) ao longo do tempo. O mobiliário corporativo comum de menor custo tem uma vida útil média comprovada de apenas 14 meses, momento em que os pistões começam a falhar e a espuma deforma, exigindo recompras frequentes e manutenções caras. A nossa ErgoPro Executive possui garantia contratual integral de 5 anos e laudo da NR-17 emitido pela ABERGO. Diluído em 5 anos de trabalho, o custo real da nossa cadeira é de menos de R$ 1,90 por dia útil por colaborador, acompanhada de emissão gratuita de laudo ergonômico individual para o PGR da FinCorp e faturamento em 30/60/90 dias no boleto para suavizar seu fluxo de caixa."</em></p>
+      <p><strong>Simulador de IA (Persona Diretor de Compras — Roberto):</strong> <em>"Interessante esse cálculo de R$ 1,90 ao dia e a garantia de 5 anos documentada em contrato... Isso realmente me livra do desgaste de ter que repor cadeiras a cada 14 meses. Mas e se fecharmos as 120 posições, você consegue manter essa garantia para o faturamento em 30/60/90 e bonificar o frete para o nosso prédio na Faria Lima?"</em></p>
+      <p><strong>Vendedor (Usuário):</strong> <em>"Exatamente, Roberto! Para pedidos corporativos desse porte, acima de R$ 35 mil, o frete CIF para São Paulo é 100% bonificado pela Taranis Black, e o faturamento em 30/60/90 no boleto já está pré-aprovado para o CNPJ da FinCorp."</em></p>
+      <p><strong>Vendedor (Usuário):</strong> "FINALIZAR SIMULAÇÃO"</p>
+      <p><strong>Simulador de IA (Feedback Executivo):</strong><br>
+      • <strong>Pontos Fortes:</strong> Excelente transição da objeção de custo para valor (TCO); uso preciso da métrica de &lt; R$ 1,90/dia vs. 14 meses de móveis comuns; menção à garantia contratual de 5 anos; correta aplicação da regra oficial de frete CIF bonificado e faturamento 30/60/90.<br>
+      • <strong>Oportunidades de Melhoria:</strong> Poderia ter mencionado os blocos 3D/BIM para facilitar o trabalho do time de arquitetura da FinCorp.<br>
+      • <strong>Nota de Desempenho Consultivo:</strong> <strong>9,8 / 10</strong> (Aprovado com louvor na argumentação de valor).</p>
+    </blockquote>
+
+    <h4>4. Link / Print do Artefato no ChatGPT</h4>
+    <p>Artefato homologado na pasta local <code>prompts/roleplay_simulacao_clientes.md</code> e configurável em Custom GPTs com comprovação de diálogo de teste com nota 9,8/10.</p>
+
+    <!-- ETAPA 2 OPCIONAL -->
+    <h3>Etapa 2 — Automação de E-mail & Nutrição de Leads <span class="badge-check">OPCIONAL</span></h3>
+
+    <h4>1. Estrutura da Régua Condicional (IF/ELSE)</h4>
+    <pre><code>[INÍCIO DA CADÊNCIA]
+       │
+       ▼
+[E-mail 01: Abordagem Consultiva Personalizada por Persona (RH / Facilities / Compras)]
+       │
+       ├───────────────────────────────────────────┐
+       ▼ (Se Abriu e Clicou no Link do Catálogo/BIM) ▼ (Se NÃO Abriu após 3 dias úteis)
+[CONDIÇÃO: Lead Aquecido]                  [CONDIÇÃO: Lead Frio]
+       │                                           │
+       ▼                                           ▼
+[E-mail 02A: Proposta de Diagnóstico NR-17] [E-mail 02B: Reenvio com Novo Assunto Curto]
+(Convite para avaliação ergonômica sem custo) (Foco em TCO ou Prazos do CD Santa Catarina)
+       │                                           │
+       ├─────────────────────┐                     ├──────────────────────┐
+       ▼ (Se Respondeu)      ▼ (Se Não Respondeu)  ▼ (Se Abriu/Respondeu)  ▼ (Se Não Respondeu)
+[Gatilho: Agendar Reunião] [E-mail 03A: Case TCO] [Migra p/ Fluxo 02A]   [E-mail 03B: Break-up]
+(Consultor Humano Assume) (Matemática de 5 anos)                        (Porta aberta / Descarte)</code></pre>
+    <p><em>Supervisão Humana: Trava técnica obrigatória impedindo envios autônomos. Toda mensagem é gerada como rascunho (Draft) e revisada pelo consultor antes do disparo.</em></p>
+
+    <h4>2. Prompts de Assunto e Corpo de E-mail por Segmento — TEXTO INTEGRAL</h4>
+    <pre><code># PROMPT GERADOR DE E-MAILS CONSULTIVOS B2B — TARANIS BLACK
+
+Você é o Especialista em Prospecção Consultiva da Taranis Black.
+Gere um e-mail de abordagem B2B altamente personalizado utilizando as variáveis da conta abaixo:
+
+[VARIÁVEIS DE ENTRADA]
+- Nome do Contato: {{Nome}}
+- Cargo / Área: {{Cargo}} (RH / Facilities / Compras)
+- Empresa: {{Empresa}}
+- Porte / Setor: {{Porte_Setor}}
+- Produto de Maior Fit: {{Linha_Produto}} (ErgoPro / SmartDesk / Silence)
+- Dor Principal Identificada: {{Dor_Principal}}
+
+[DIRETRIZES DE REDAÇÃO]
+1. Aplique rigorosamente os 4 Pilares de Tom de Voz da Taranis Black (Científico, Empático, Sofisticado e Descomplicado).
+2. Gere 3 opções de linha de assunto: uma focada em curiosidade técnica, uma em dor/solução e uma orientada a ROI.
+3. No corpo do e-mail (máximo de 150 palavras):
+   - Faça referência natural ao setor da empresa e ao papel profissional do contato;
+   - Conecte a dor do cliente aos diferenciais factuais da linha Taranis Black indicada;
+   - Apresente um Call to Action (CTA) de baixo atrito (ex: convite para receber o laudo da NR-17 ou blocos 3D, sem forçar reunião de fechamento).
+4. Inclua rodapé obrigatório com cláusula de opt-out em respeito à LGPD.
+5. Lembre que o texto gerado é um RASCUNHO que exige revisão humana obrigatória antes do disparo.</code></pre>
+
+    <h4>3. Exemplo Completo de E-mail Gerado para Conta Real da Base — TEXTO INTEGRAL</h4>
+    <pre><code>Opções de Assunto:
+1. [Curiosidade Técnica] Integrando acústica ISO 23351-1 e blocos BIM no projeto do Studio Alfa
+2. [Dor/Solução] Cabines acústicas sem obra civil para os novos layouts corporativos do Studio Alfa
+3. [Exclusivo Facilities] Biblioteca 3D Taranis Black e isolamento de 32 dB para seus clientes
+
+Corpo da Mensagem:
+
+Olá, Arquiteta Camila, tudo bem?
+
+Acompanho os projetos de retrofit corporativo desenvolvidos pelo Studio Alfa e admiro a preocupação de vocês em criar espaços que unem estética impecável e funcionalidade.
+
+Sabemos que um dos maiores desafios nos escritórios contemporâneos em conceito aberto é viabilizar chamadas e reuniões ágeis sem recorrer a dispendiosas obras de drywall, que engessam o layout e geram ruído.
+
+Desenvolvemos a Linha Taranis Silence exatamente para solucionar essa dor: nossas cabines acústicas entregam atenuação real de 32 dB certificada pela norma ISO 23351-1, com renovação total de ar a cada 90 segundos via sensor de CO2 e instalação limpa em menos de 3 horas.
+
+Para apoiar os projetos do Studio Alfa, disponibilizamos nossa biblioteca completa de blocos 3D e famílias Revit/SketchUp de toda a linha Silence e SmartDesk Pro. 
+
+Você teria 10 minutos nesta quinta-feira para eu lhe encaminhar o acesso aos arquivos 3D e conversarmos sobre como apoiar as especificações dos seus clientes corporativos?
+
+Um abraço,
+
+Mariana Silva | Consultora Comercial B2B
+Taranis Black Ergonomia Corporativa
+CD Santa Catarina: Atendimento Sul e Sudeste em 5 a 8 dias úteis
+Garantia de 5 anos de fábrica | Em conformidade com a NR-17
+
+---
+Caso não deseje receber nossas atualizações técnicas sobre ergonomia e arquitetura corporativa, responda com "Descadastrar" e removeremos seu contato imediatamente.</code></pre>
+
+    <!-- ANEXO DE EVIDÊNCIAS -->
+    <h2>📎 ANEXO DE EVIDÊNCIAS</h2>
+    <table>
+      <tr>
+        <th>Artefato</th>
+        <th>Descrição</th>
+        <th>Link / Caminho</th>
+        <th>Status / Nota de Uso</th>
+      </tr>
+      <tr>
+        <td><strong>01. AI Canvas Corporativo</strong></td>
+        <td>Mapeamento detalhado das 3 oportunidades de IA, tipos de IA e governança.</td>
+        <td><code>docs/01_rota0_ai_canvas.md</code></td>
+        <td>Base estratégica da Rota 0 (Etapa 1).</td>
+      </tr>
+      <tr>
+        <td><strong>02. Matriz Esforço × Impacto</strong></td>
+        <td>Matriz matemática ponderada, fórmulas, sensibilidade e enquadramento em quadrantes.</td>
+        <td><code>docs/01_rota0_matriz_esforco_impacto.md</code></td>
+        <td>Priorização oficial e sequenciamento (Etapa 2).</td>
+      </tr>
+      <tr>
+        <td><strong>03. Métricas & Gestão de Mudança</strong></td>
+        <td>Metas de 14h/semana liberadas, ROI de 877% a 1.268% e plano contra a síndrome do "sempre vendi assim".</td>
+        <td><code>docs/01_rota0_metricas_e_mudanca.md</code></td>
+        <td>Planejamento de adoção e métricas (Etapa 2).</td>
+      </tr>
+      <tr>
+        <td><strong>04. Política de IA Responsável & LGPD</strong></td>
+        <td>Matriz Pode vs. Não Pode, comitê de 5 membros, rituais de auditoria e conformidade Art. 11 LGPD.</td>
+        <td><code>docs/01_rota0_politica_governanca_lgpd.md</code></td>
+        <td>Governança corporativa e compliance (Etapa 3).</td>
+      </tr>
+      <tr>
+        <td><strong>05. Playbook de Vendas & Objeções</strong></td>
+        <td>Mapeamento das 5 objeções oficiais (OBJ-01 a OBJ-05), argumentos de TCO e prazos do CD-SC.</td>
+        <td><code>docs/02_rota1_playbook_vendas.md</code></td>
+        <td>Playbook consultivo oficial da Rota 1 (Etapa 1).</td>
+      </tr>
+      <tr>
+        <td><strong>06. Prompt de Simulação (Roleplay)</strong></td>
+        <td>Prompt do Treinador Simulador de Clientes com diálogo de teste homologado (nota 9,8/10).</td>
+        <td><code>prompts/roleplay_simulacao_clientes.md</code></td>
+        <td>Treinamento e capacitação de vendedores (Etapa 1).</td>
+      </tr>
+      <tr>
+        <td><strong>07. Régua IF/ELSE & E-mails de Nutrição</strong></td>
+        <td>Fluxo de nutrição condicional por persona e exemplo prático para Studio Alfa Arquitetura (#1044).</td>
+        <td><code>prompts/gerador_emails_consultivos.md</code></td>
+        <td>Entrega Opcional da Rota 1 (Etapa 2).</td>
+      </tr>
+    </table>
+
+    <!-- CHECKLIST FINAL -->
+    <h2>📤 CHECKLIST DE ENVIO NA PLATAFORMA DA ALURA</h2>
+    <ul class="checklist">
+      <li>✅ <strong>Passo 1:</strong> Template oficial duplicado no seu Google Drive pessoal sem solicitar permissão de edição.</li>
+      <li>✅ <strong>Passo 2:</strong> Todas as seções preenchidas: Identificação, Resumo para a CEO, Rota 0 (Etapas 1, 2 e 3), Rota 1 (Etapa 1 e 2) e Anexo de Evidências com textos integrais por extenso.</li>
+      <li>✅ <strong>Passo 3:</strong> Compartilhamento configurado no Google Docs como <strong>"Qualquer pessoa com o link"</strong> no papel de <strong>"Leitor"</strong>.</li>
+      <li>✅ <strong>Passo 4:</strong> Link público testado em modo anônimo (Ctrl + Shift + N) sem pedir login antes de colar na plataforma da Alura.</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>
